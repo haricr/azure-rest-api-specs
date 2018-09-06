@@ -2117,6 +2117,14 @@
 						"$ref": "#/parameters/runId"
 					},
 					{
+						"name": "isRecursive",
+						"description": "The pipeline run identifier.",
+						"in": "path",
+						"required": false,
+						"type": "boolean",
+						"x-ms-parameter-location": "method"
+					},
+					{
 						"$ref": "#/parameters/api-version"
 					}
 				],
@@ -2936,6 +2944,7 @@
 					"type": "string",
 					"description": "Variable type.",
 					"enum": [
+						"Array",
 						"String",
 						"Bool"
 					],

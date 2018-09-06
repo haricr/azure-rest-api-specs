@@ -2900,8 +2900,44 @@
 				}
 			},
 			"required": [
-				"condition",
-				"items"
+				"name",
+				"value"
+			]
+		},
+		"AppendVariableActivity": {
+			"x-ms-discriminator-value": "AppendVariable",
+			"description": "Append value for a variable .",
+			"allOf": [
+				{
+					"$ref": "#/definitions/ControlActivity"
+				}
+			],
+			"properties": {
+				"typeProperties": {
+					"description": "Set Variable activity properties.",
+					"x-ms-client-flatten": true,
+					"$ref": "#/definitions/AppendVariableActivityTypeProperties"
+				}
+			},
+			"required": [
+				"typeProperties"
+			]
+		},
+		"AppendVariableActivityTypeProperties": {
+			"description": "Set Variable activity properties.",
+			"properties": {
+				"name": {
+					"description": "Name of the varible whose value needs to be appended.",
+					"type": "string"
+				},
+				"value": {
+					"description": "Proprety value for variable. Could be static value or an Expression.",
+					"type": "object"
+				}
+			},
+			"required": [
+				"name",
+				"value"
 			]
 		},
 		"DatabricksNotebookActivity": {
