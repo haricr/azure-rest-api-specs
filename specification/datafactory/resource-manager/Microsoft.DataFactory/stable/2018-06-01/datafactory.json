@@ -2225,7 +2225,7 @@
             "description": "Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.",
             "in": "query",
             "required": false,
-            "type": "bool",
+            "type": "boolean",
             "x-ms-parameter-location": "method"
           },
           {
@@ -4037,14 +4037,6 @@
           "items": {
             "$ref": "#/definitions/RunQueryOrderBy"
           }
-        },
-        "runGroupId": {
-          "description": "Filter all the recovery runs of a pipeline run for the given identifier.",
-          "type": "string"
-        },
-        "isCurrent": {
-          "description": "Fetch only the latest recovered run.",
-          "type": "boolean"
         }
       },
       "required": [
@@ -4069,7 +4061,9 @@
             "ActivityRunEnd",
             "ActivityType",
             "TriggerName",
-            "TriggerRunTimestamp"
+            "TriggerRunTimestamp",
+            "RunGroupId",
+            "IsCurrent"
           ],
           "x-ms-enum": {
             "name": "RunQueryFilterOperand",
